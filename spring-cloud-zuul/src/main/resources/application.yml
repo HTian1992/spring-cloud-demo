@@ -1,0 +1,17 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://user:123456@127.0.0.1:8761/eureka
+server:
+  port: 8090
+spring:
+  application:
+    name: service-zuul
+zuul:
+  routes:
+    api-a:
+      path: /api-a/**
+      serviceId: ZWY-GTPW #路由转发，以/api-a/ 开头的请求都转发给ZWY-GTPW服务
+    api-b:
+      path: /api-b/**
+      serviceId: SAAS-LIB-COMSUMER
