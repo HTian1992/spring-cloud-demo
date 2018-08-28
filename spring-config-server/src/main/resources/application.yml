@@ -1,0 +1,17 @@
+server:
+  port: 8088
+spring:
+  profiles:
+    active: subversion
+  application:
+    name: clound-config-server
+  cloud:
+    config:
+      label: config
+      enabled: true
+      server:
+        svn:
+          uri: https://120.78.82.33:443/svn/one
+          username: lizehao
+          password: 123456
+#svn://106.14.113.68:3690/one
