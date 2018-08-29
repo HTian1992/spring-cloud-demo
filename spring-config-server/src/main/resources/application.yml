@@ -11,7 +11,7 @@ spring:
       enabled: true
       server:
         svn:
-          uri: https://120.78.82.33:443/svn/one
+          uri: https://127.0.0.1:443/svn/one
           username: lizehao
           password: 123456
-#svn://106.14.113.68:3690/one
+#svn://127.0.0.1:3690/one
