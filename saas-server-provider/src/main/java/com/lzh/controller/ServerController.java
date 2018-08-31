@@ -10,18 +10,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class ServerController {
 
-	/*@Autowired
-	private ApplicationProperties applicationProperties;*/
-	
-	@Value("${zwy.global.conf.redis.host}")
-	private String profile;
-	@Value("${zwy.global.conf.redis.password}")
-	private String test;
-	@Value("${spring.batch.job.enabled}")
-	private boolean rs;
-	
-	static int i = 1;
-	
 	private Thread thread = new Thread();
 
 	@GetMapping("/lzh")
@@ -34,32 +22,8 @@ public class ServerController {
 		return "Hello world";
 	}
 
-	@GetMapping("/profile")
-	public String getProfile() {
-		return profile;
-	}
-
-	
-	@GetMapping("/test")
-	public String getTest() {
-		return test;
-	}
-	
 	@GetMapping("/erk")
 	public String getErkInfo(HttpServletRequest request) {
-		return ""+request.getRemoteAddr()+":"+request.getRemotePort()+"返回信息：hello !!";
-	}
-	
-	@GetMapping("/simple")
-	public String getsimple(HttpServletRequest request) throws InterruptedException {
-		if (i==1) {
-			i++;
-			return "" + request.getRemoteAddr() + ":" + request.getRemotePort() + ",测试熔断器!!";
-		} else {
-			System.out.println("i = " +i);
-			thread.sleep(10*1000);
-			System.out.println("i = " +(i++));
-			return null;
-		}
+		return "请求地址为:"+request.getLocalAddr()+":"+"返回信息：hello !!";
 	}
 }

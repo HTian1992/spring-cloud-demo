@@ -2,7 +2,10 @@ spring:
   cloud:
     config:
       uri: http://127.0.0.1:8088
+      #配置后缀
       profile: test
+      #配置所在目录文件夹名称
       label: config
   application:
+  #配置文件名前缀
     name: zwy-gtpw
