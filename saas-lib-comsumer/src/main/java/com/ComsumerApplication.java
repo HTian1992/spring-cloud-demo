@@ -11,9 +11,9 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 @EnableEurekaClient
 //超时机制、断路器模式，使服务在不可用时，自动降级，返回fallback
 @EnableCircuitBreaker
-public class SaasApplication {
+public class ComsumerApplication {
 
 	public static void main(String[] args) {  
-	    SpringApplication.run(SaasApplication.class, args);
+	    SpringApplication.run(ComsumerApplication.class, args);
 	  }
 }
